@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE module PUBLIC "-//Google Inc.//DTD Google Web Toolkit 2.5.0//EN" "http://google-web-toolkit.googlecode.com/svn/tags/2.5.0/distro-source/core/src/gwt-module.dtd">
+<module rename-to="demo">
+	<inherits name="com.google.gwt.user.User" />
+	<inherits name="com.github.legioth.propertysource.PropertySource" />
+	<source path="demo" />
+	
+	<entry-point class="com.github.legioth.propertysource.demo.DemoEntryPoint"/>
+
+	<define-property values="true,false" name="foo.bool" />
+	<set-property name="foo.bool" value="false" />
+
+	<define-property values="string1,string2" name="foo.string" />
+	<extend-property values="string3" name="foo.string" />
+	<set-property name="foo.string" value="string1" />
+
+	<define-configuration-property name="foo.multiConf"
+		is-multi-valued="true" />
+	<extend-configuration-property name="foo.multiConf"
+		value="Conf1" />
+	<extend-configuration-property name="foo.multiConf"
+		value="Conf3" />
+
+	<define-configuration-property name="foo.singleConf"
+		is-multi-valued="false" />
+	<set-configuration-property name="foo.singleConf"
+		value="Single1" />
+	<set-configuration-property name="foo.singleConf"
+		value="Single2" />
+
+</module>
